@@ -1,7 +1,5 @@
-FROM ioft/armhf-ubuntu:16.10
-EXPOSE 6116
+FROM quay.io/danfercf/ubuntu-dev:0.1
 MAINTAINER danfercf@gmail.com
-RUN apt-get update && apt-get install -y build-essential libboost-all-dev libbz2-dev libgmp3-dev git cmake libmysqlclient-dev
 RUN mkdir -p /usr/src/ghost
 WORKDIR /usr/src/
 RUN git clone https://github.com/danfercf1/ghost.git ghost
@@ -23,4 +21,5 @@ RUN mv /usr/local/ghost/language_spanish.cfg /usr/local/ghost/language.cfg
 COPY default.cfg /usr/local/ghost
 COPY ghost.cfg /usr/local/ghost
 WORKDIR /usr/local/ghost
+EXPOSE 6116
 CMD ./ghost++ && tail -f /dev/null
