@@ -28,4 +28,5 @@ COPY update_dota_elo.cfg /usr/local/ghost
 COPY update_w3mmd_elo.cfg /usr/local/ghost
 WORKDIR /usr/local/ghost
 EXPOSE 6116
-CMD ./ghost++ && tail -f /dev/null
+COPY ghost.sh /usr/local/ghost
+RUN chmod +x /usr/local/ghost/ghost.sh
