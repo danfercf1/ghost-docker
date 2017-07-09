@@ -1,6 +1,4 @@
 #!/bin/bash
-set -ex
-
 #GENERAL
 if [ -z "$BOT_HOST_PORT" ]; then
     BOT_HOST_PORT="6116"
