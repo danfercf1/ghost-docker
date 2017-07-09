@@ -6,6 +6,9 @@ fi
 if [ -z "$BOT_MAX_GAMES" ]; then
     BOT_MAX_GAMES="5"
 fi
+if [ -z "$BOT_ID" ]; then
+    BOT_ID="1"
+fi
 if [ -z "$BOT_SAVE_REPLAYS" ]; then
     BOT_SAVE_REPLAYS="1"
 fi
@@ -98,6 +101,7 @@ fi
 
 sed -i 's/{BOT_HOST_PORT}/'"${BOT_HOST_PORT}"'/' default.cfg
 sed -i 's/{BOT_MAX_GAMES}/'"${BOT_MAX_GAMES}"'/' default.cfg
+sed -i 's/{BOT_ID}/'"${BOT_ID}"'/' default.cfg
 sed -i 's/{BOT_SAVE_REPLAYS}/'"${BOT_SAVE_REPLAYS}"'/' default.cfg
 sed -i 's/{BOT_COMMAND_TRIGGER}/'"${BOT_COMMAND_TRIGGER}"'/' default.cfg
 sed -i 's/{BOT_NAME}/'"${BOT_NAME}"'/' default.cfg
